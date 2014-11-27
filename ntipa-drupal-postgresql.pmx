@@ -1,0 +1,31 @@
+---
+name: ntipa-drupal-postgresql
+description: Ntipa Drupal 7.32 with PostgreSQL 9.3
+keywords: Ntipa Drupal 7.32 with PostgreSQL 9.3
+type: Drupal
+documentation: ''
+images:
+- name: tornabene_docker-drupal_latest
+  source: tornabene/docker-drupal:latest
+  type: Default
+  ports:
+  - host_port: '80'
+    container_port: '80'
+    proto: TCP
+  - host_port: '8022'
+    container_port: '22'
+    proto: TCP
+  links:
+  - service: tornabene_docker-postgres
+    alias: db
+- name: tornabene_docker-postgres
+  source: tornabene/docker-postgres:latest
+  category: DATABASE
+  type: Default
+  ports:
+  - host_port: '5432'
+    container_port: '5432'
+    proto: TCP
+  volumes:
+  - host_path: "/opt/ntipa/postgresql_data"
+    container_path: "/var/lib/postgresql"
