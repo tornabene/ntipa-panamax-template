@@ -1,0 +1,14 @@
+---
+name: Ntipa Drupal 7.32 with PostgreSQL 9.3
+description: drupal, postgres, postgresql, public, ntipa
+keywords: Ntipa Drupal 7.32 with PostgreSQL 9.3
+type: Drupal
+documentation: ''
+images:
+- name: tornabene_docker-drupal_latest
+  source: tornabene/docker-drupal:latest
+  type: Default
+- name: tornabene_docker-postgres
+  source: tornabene/docker-postgres:latest
+  category: WEB
+  type: Default
